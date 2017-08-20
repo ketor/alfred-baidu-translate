@@ -322,7 +322,7 @@
 		</dict>
 	</array>
 	<key>readme</key>
-	<string>百度翻译 Workflow v2.0.1
+	<string>百度翻译 Workflow v1.0
 
 默认快捷键 yd, 查看翻译结果。
 
@@ -338,9 +338,7 @@
 2. 按`Control+回车`打开百度翻译页面
 3. 按`Comman+回车`直接在打出翻译结果
 4. 按`Shift+回车`直接发音
-5. 选中文字 双击`Command`进行翻译
-
-</string>
+5. 选中文字 双击`Command`进行翻译</string>
 	<key>uidata</key>
 	<dict>
 		<key>0907BEF4-816F-48FF-B157-03F5C2AACEAB</key>
@@ -409,20 +407,8 @@
 			<integer>40</integer>
 		</dict>
 	</dict>
-	<key>variables</key>
-	<dict>
-		<key>baidu_appid</key>
-		<string></string>
-		<key>baidu_secretkey</key>
-		<string></string>
-	</dict>
-	<key>variablesdontexport</key>
-	<array>
-		<string>baidu_appid</string>
-		<string>baidu_secretkey</string>
-	</array>
 	<key>version</key>
-	<string>2.0.1</string>
+	<string>1.0</string>
 	<key>webaddress</key>
 	<string>https://www.baidu.com</string>
 </dict>

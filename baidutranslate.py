@@ -18,9 +18,11 @@ def set_baidutranslate_url(query):
     appid = os.getenv('baidu_appid', '')
     secretKey = os.getenv('baidu_secretkey', '')
 
+    # 无appid时使用web api
     if not appid or not secretKey:
-        appid='20151113000005349'
-        secretKey='osubCEzlGjzvw8qdQc41'
+        query = urllib.quote(str(query))
+        url = 'http://fanyi.baidu.com/v2transapi?from=auto&to=auto&query='+query
+        return url
 
     url = 'http://api.fanyi.baidu.com/api/trans/vip/translate'
     fromLang = 'auto'
@@ -58,11 +60,19 @@ def check_English(query):
 
 
 def get_translation(query, isEnglish, rt):
+    import os
     # 翻译结果
     subtitle = '翻译结果'
     translations = rt.get("trans_result")
 
+    appid = os.getenv('baidu_appid', '')
+    secretKey = os.getenv('baidu_secretkey', '')
+
     title = ''
+    # 无appid时使用web api
+    if not appid or not secretKey:
+        translations = translations.get('data')
+
     if translations is not None and len(translations) > 0:
         for i in translations:
             title = title + i.get('dst') + "\n"
